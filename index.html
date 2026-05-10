@@ -1,927 +1,536 @@
 <!DOCTYPE html>
-<html lang="ar" dir="rtl">
-
+<html lang="en" dir="ltr">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>م/ محسن علوان — السيرة الذاتية</title>
-  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;900&display=swap" rel="stylesheet">
-  <style>
-    :root {
-      --green-deep: #1a4a2e;
-      --green-mid: #2d7a4f;
-      --green-light: #4caf7d;
-      --green-pale: #e8f5ee;
-      --green-mint: #a8d5b5;
-      --gold: #c9a84c;
-      --gold-light: #e8cc7a;
-      --cream: #f8f6f0;
-      --white: #ffffff;
-      --dark: #111a15;
-      --text-muted: #5a7a65;
-    }
-
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
-    html {
-      scroll-behavior: smooth;
-    }
-
-    body {
-      font-family: 'Cairo', sans-serif;
-      background: var(--cream);
-      color: var(--dark);
-      overflow-x: hidden;
-    }
-
-    /* ─── NAV ─── */
-    nav {
-      position: fixed;
-      top: 0;
-      left: 0;
-      right: 0;
-      z-index: 100;
-      background: rgba(26, 74, 46, 0.96);
-      backdrop-filter: blur(12px);
-      padding: 0 48px;
-      height: 68px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      border-bottom: 1px solid rgba(201, 168, 76, 0.3);
-    }
-
-    .nav-brand {
-      font-size: 18px;
-      font-weight: 700;
-      color: var(--gold-light);
-      letter-spacing: 1px;
-    }
-
-    .nav-links {
-      display: flex;
-      gap: 32px;
-      list-style: none;
-    }
-
-    .nav-links a {
-      color: rgba(255, 255, 255, 0.9);
-      text-decoration: none;
-      font-size: 15px;
-      font-weight: 600;
-      transition: color 0.3s;
-    }
-
-    .nav-links a:hover {
-      color: var(--gold-light);
-    }
-
-    /* ─── HERO ─── */
-    #hero {
-      min-height: 100vh;
-      background: linear-gradient(135deg, var(--green-deep) 0%, #0d2e1c 40%, #1a3d28 100%);
-      display: grid;
-      grid-template-columns: 1fr 420px;
-      align-items: center;
-      padding: 120px 80px 80px;
-      position: relative;
-      overflow: hidden;
-    }
-
-    #hero::before {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background: radial-gradient(ellipse 60% 80% at 20% 50%, rgba(76, 175, 125, 0.12) 0%, transparent 70%);
-      pointer-events: none;
-    }
-
-    .hero-content {
-      position: relative;
-      z-index: 2;
-    }
-
-    .hero-badge {
-      display: inline-flex;
-      align-items: center;
-      gap: 10px;
-      background: rgba(201, 168, 76, 0.15);
-      border: 1px solid rgba(201, 168, 76, 0.4);
-      padding: 8px 20px;
-      border-radius: 100px;
-      color: var(--gold-light);
-      font-size: 14px;
-      font-weight: 600;
-      margin-bottom: 24px;
-      animation: fadeInDown 0.8s ease both;
-    }
-
-    .hero-name {
-      font-size: clamp(40px, 5vw, 64px);
-      font-weight: 900;
-      color: var(--white);
-      line-height: 1.1;
-      margin-bottom: 12px;
-      animation: fadeInDown 0.9s ease 0.1s both;
-    }
-
-    .hero-name span {
-      color: var(--green-light);
-    }
-
-    .hero-title {
-      font-size: clamp(18px, 2vw, 24px);
-      color: var(--gold);
-      font-weight: 700;
-      margin-bottom: 24px;
-      animation: fadeInDown 1s ease 0.2s both;
-    }
-
-    .hero-desc {
-      font-size: 16px;
-      line-height: 1.9;
-      color: rgba(255, 255, 255, 0.8);
-      max-width: 560px;
-      margin-bottom: 40px;
-      animation: fadeInDown 1s ease 0.3s both;
-    }
-
-    .hero-ctas {
-      display: flex;
-      gap: 16px;
-      flex-wrap: wrap;
-      animation: fadeInDown 1s ease 0.4s both;
-    }
-
-    .btn-primary {
-      background: linear-gradient(135deg, var(--gold), var(--gold-light));
-      color: var(--green-deep);
-      padding: 14px 36px;
-      border-radius: 8px;
-      font-size: 16px;
-      font-weight: 700;
-      text-decoration: none;
-      transition: transform 0.2s, box-shadow 0.2s;
-      box-shadow: 0 4px 20px rgba(201, 168, 76, 0.4);
-    }
-
-    .btn-primary:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 8px 30px rgba(201, 168, 76, 0.5);
-    }
-
-    .btn-outline {
-      border: 1.5px solid rgba(255, 255, 255, 0.3);
-      color: rgba(255, 255, 255, 0.9);
-      padding: 14px 36px;
-      border-radius: 8px;
-      font-size: 16px;
-      font-weight: 600;
-      text-decoration: none;
-      transition: border-color 0.2s, background 0.2s;
-    }
-
-    .btn-outline:hover {
-      border-color: var(--gold);
-      background: rgba(201, 168, 76, 0.08);
-    }
-
-    .hero-photo-wrap {
-      position: relative;
-      z-index: 2;
-      display: flex;
-      justify-content: center;
-      animation: fadeInLeft 1s ease 0.2s both;
-    }
-
-    .hero-photo-frame {
-      position: relative;
-      width: 360px;
-      height: 460px;
-    }
-
-    .hero-photo-frame::before {
-      content: '';
-      position: absolute;
-      top: -12px;
-      left: -12px;
-      width: 100%;
-      height: 100%;
-      border: 2px solid var(--gold);
-      border-radius: 200px;
-      opacity: 0.4;
-    }
-
-    .hero-photo-frame img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      object-position: top;
-      border-radius: 200px;
-      position: relative;
-      z-index: 1;
-      border: 4px solid rgba(255, 255, 255, 0.1);
-    }
-
-    @keyframes fadeInDown {
-      from {
-        opacity: 0;
-        transform: translateY(-20px)
-      }
-
-      to {
-        opacity: 1;
-        transform: none
-      }
-    }
-
-    @keyframes fadeInLeft {
-      from {
-        opacity: 0;
-        transform: translateX(-30px)
-      }
-
-      to {
-        opacity: 1;
-        transform: none
-      }
-    }
-
-    /* ─── SECTIONS ─── */
-    section {
-      padding: 80px;
-    }
-
-    .section-label {
-      display: inline-flex;
-      align-items: center;
-      gap: 12px;
-      font-size: 14px;
-      font-weight: 700;
-      color: var(--gold);
-      margin-bottom: 12px;
-    }
-
-    .section-label::after {
-      content: '';
-      width: 40px;
-      height: 2px;
-      background: var(--green-mid);
-    }
-
-    .section-title {
-      font-size: clamp(32px, 4vw, 48px);
-      font-weight: 900;
-      margin-bottom: 50px;
-      color: var(--green-deep);
-    }
-
-    /* ─── ABOUT (التخصص والخبرة) ─── */
-    #about {
-      background: var(--white);
-    }
-
-    .about-text {
-      margin-bottom: 40px;
-    }
-
-    .about-text p {
-      font-size: 18px;
-      line-height: 1.9;
-      color: #3a5a45;
-      margin-bottom: 20px;
-      font-weight: 600;
-    }
-
-    .about-cards-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      gap: 20px;
-    }
-
-    .mini-card {
-      background: var(--green-pale);
-      border: 1px solid rgba(76, 175, 125, 0.2);
-      padding: 20px;
-      border-radius: 12px;
-      text-align: center;
-      transition: 0.3s;
-    }
-
-    .mini-card:hover {
-      transform: translateY(-3px);
-      box-shadow: 0 10px 20px rgba(26, 74, 46, 0.1);
-    }
-
-    .mini-card h4 {
-      font-size: 18px;
-      color: var(--green-deep);
-      font-weight: 800;
-      margin-bottom: 5px;
-    }
-
-    .mini-card span {
-      font-size: 13px;
-      color: var(--text-muted);
-    }
-
-    /* ─── SKILLS (المهارات الجوهرية) ─── */
-    #skills {
-      background: linear-gradient(170deg, var(--green-pale) 0%, var(--white) 100%);
-    }
-
-    .skills-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 24px;
-    }
-
-    .skill-card {
-      background: var(--white);
-      border: 1px solid rgba(45, 122, 79, 0.12);
-      border-radius: 16px;
-      padding: 32px 28px;
-      transition: transform 0.3s, box-shadow 0.3s;
-    }
-
-    .skill-card:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 15px 30px rgba(26, 74, 46, 0.1);
-    }
-
-    .skill-icon {
-      font-size: 32px;
-      margin-bottom: 16px;
-      display: block;
-    }
-
-    .skill-card h4 {
-      font-size: 20px;
-      font-weight: 800;
-      color: var(--green-deep);
-      margin-bottom: 10px;
-    }
-
-    .skill-card p {
-      font-size: 15px;
-      color: var(--text-muted);
-      line-height: 1.7;
-    }
-
-    /* ─── METHODOLOGY (المنهجية المهنية) ─── */
-    #methodology {
-      background: var(--green-deep);
-      color: white;
-    }
-
-    #methodology .section-title {
-      color: white;
-    }
-
-    #methodology .section-label {
-      color: var(--gold);
-    }
-
-    #methodology .section-label::after {
-      background: var(--gold-light);
-    }
-
-    .method-steps {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 30px;
-      margin-bottom: 50px;
-    }
-
-    .method-step {
-      background: rgba(255, 255, 255, 0.05);
-      border: 1px solid rgba(255, 255, 255, 0.1);
-      border-radius: 20px;
-      padding: 40px 30px;
-      position: relative;
-    }
-
-    .step-number {
-      font-size: 50px;
-      font-weight: 900;
-      color: rgba(201, 168, 76, 0.3);
-      margin-bottom: 10px;
-      line-height: 1;
-    }
-
-    .method-step h3 {
-      font-size: 22px;
-      font-weight: 800;
-      margin-bottom: 16px;
-      color: var(--white);
-    }
-
-    .method-step p {
-      color: rgba(255, 255, 255, 0.7);
-      line-height: 1.8;
-      font-size: 15px;
-    }
-
-    .tools-section h3 {
-      font-size: 20px;
-      color: var(--gold-light);
-      margin-bottom: 20px;
-    }
-
-    .tools-tags {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 12px;
-    }
-
-    .tool-tag {
-      background: rgba(255, 255, 255, 0.1);
-      border: 1px solid rgba(255, 255, 255, 0.2);
-      padding: 10px 20px;
-      border-radius: 100px;
-      font-size: 14px;
-      font-weight: 600;
-      color: var(--white);
-    }
-
-    /* ─── ACHIEVEMENTS (الإنجازات المهنية) ─── */
-    #achievements {
-      background: var(--white);
-    }
-
-    .achieve-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-      gap: 24px;
-    }
-
-    .achieve-item {
-      display: flex;
-      align-items: center;
-      gap: 20px;
-      padding: 24px;
-      border-radius: 14px;
-      background: var(--green-pale);
-      border: 1px solid rgba(76, 175, 125, 0.2);
-      transition: 0.3s;
-    }
-
-    .achieve-item:hover {
-      transform: translateX(-5px);
-      background: #e0f0e8;
-    }
-
-    .achieve-icon {
-      width: 50px;
-      height: 50px;
-      flex-shrink: 0;
-      background: var(--green-deep);
-      border-radius: 12px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 24px;
-      color: white;
-    }
-
-    .achieve-item p {
-      font-size: 16px;
-      line-height: 1.6;
-      color: var(--green-deep);
-      font-weight: 700;
-    }
-
-    /* ─── BOOK SECTION (كتاب البداية) ─── */
-    #publication {
-      background: linear-gradient(170deg, var(--green-pale) 0%, var(--white) 100%);
-    }
-
-    .book-showcase {
-      display: grid;
-      grid-template-columns: 1fr 350px;
-      gap: 60px;
-      align-items: center;
-    }
-
-    .book-info h2 {
-      font-size: 48px;
-      font-weight: 900;
-      color: var(--green-deep);
-      margin-bottom: 10px;
-    }
-
-    .book-info h3 {
-      font-size: 22px;
-      color: var(--green-mid);
-      margin-bottom: 24px;
-      font-weight: 700;
-    }
-
-    .book-info p {
-      font-size: 17px;
-      line-height: 1.9;
-      color: var(--text-muted);
-      margin-bottom: 20px;
-      font-weight: 600;
-    }
-
-    .book-tag {
-      display: inline-block;
-      background: var(--green-deep);
-      color: var(--white);
-      padding: 10px 24px;
-      border-radius: 100px;
-      font-size: 15px;
-      font-weight: 700;
-      margin-top: 16px;
-    }
-
-    .book-cover-wrap img {
-      width: 100%;
-      border-radius: 16px;
-      box-shadow: 0 20px 50px rgba(26, 74, 46, 0.2);
-    }
-
-    /* ─── CONTACT ─── */
-    #contact {
-      background: linear-gradient(135deg, var(--green-deep) 0%, #0a1f12 100%);
-      color: white;
-    }
-
-    #contact .section-title {
-      color: white;
-    }
-
-    .contact-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 24px;
-    }
-
-    .contact-item {
-      display: flex;
-      align-items: center;
-      gap: 20px;
-      padding: 20px;
-      background: rgba(255, 255, 255, 0.06);
-      border: 1px solid rgba(255, 255, 255, 0.1);
-      border-radius: 14px;
-      text-decoration: none;
-      color: white;
-      transition: 0.3s;
-    }
-
-    .contact-item:hover {
-      background: rgba(255, 255, 255, 0.1);
-      border-color: var(--gold-light);
-      transform: translateY(-3px);
-    }
-
-    .contact-item-icon {
-      width: 50px;
-      height: 50px;
-      flex-shrink: 0;
-      background: linear-gradient(135deg, var(--gold), var(--gold-light));
-      border-radius: 12px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 24px;
-      color: var(--green-deep);
-    }
-
-    .contact-item-text .label {
-      font-size: 13px;
-      color: rgba(255, 255, 255, 0.6);
-      font-weight: 600;
-    }
-
-    .contact-item-text .value {
-      font-size: 16px;
-      font-weight: 700;
-      margin-top: 4px;
-      direction: ltr;
-      text-align: right;
-    }
-
-    /* ─── FOOTER ─── */
-    footer {
-      background: #050f08;
-      text-align: center;
-      padding: 24px;
-      color: rgba(255, 255, 255, 0.5);
-      font-size: 15px;
-    }
-
-    footer span {
-      color: var(--gold);
-      font-weight: 700;
-    }
-
-    @media (max-width: 900px) {
-      #hero {
-        grid-template-columns: 1fr;
-        padding: 120px 32px 60px;
-        text-align: center;
-        gap: 50px;
-      }
-
-      .hero-photo-wrap {
-        display: flex;
-        justify-content: center;
-        margin-top: 20px;
-      }
-
-      .hero-photo-frame {
-        width: 260px;
-        height: 340px;
-      }
-
-      .hero-desc {
-        margin: 0 auto 30px;
-      }
-
-      .hero-ctas {
-        justify-content: center;
-      }
-
-      section {
-        padding: 60px 32px;
-      }
-
-      .book-showcase {
-        grid-template-columns: 1fr;
-        display: flex;
-        flex-direction: column-reverse;
-      }
-
-      nav {
-        padding: 0 24px;
-      }
-
-      .nav-links {
-        display: none;
-      }
-    }
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Eng. Mohsen Elwan — Portfolio</title>
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;900&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --green-deep: #1a4a2e;
+    --green-mid: #2d7a4f;
+    --green-light: #4caf7d;
+    --green-pale: #e8f5ee;
+    --green-mint: #a8d5b5;
+    --gold: #c9a84c;
+    --gold-light: #e8cc7a;
+    --cream: #f8f6f0;
+    --white: #ffffff;
+    --dark: #111a15;
+    --text-muted: #5a7a65;
+    
+    /* Branded Colors */
+    --whatsapp-green: #25D366;
+    --linkedin-blue: #0077B5;
+    --youtube-red: #FF0000;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'Cairo', sans-serif;
+    background: var(--cream);
+    color: var(--dark);
+    overflow-x: hidden;
+  }
+
+  /* ─── HEADER & SIDEBAR MENU ─── */
+  header {
+    position: fixed; top: 0; left: 0; width: 100%; z-index: 1000;
+    background: rgba(26,74,46,0.96); backdrop-filter: blur(12px);
+    height: 70px; display: flex; align-items: center; justify-content: space-between;
+    padding: 0 40px; border-bottom: 1px solid rgba(201,168,76,0.3);
+  }
+  .header-brand { font-size: 20px; font-weight: 800; color: var(--gold-light); letter-spacing: 1px; }
+  .menu-btn {
+    font-size: 28px; color: var(--white); cursor: pointer; transition: 0.3s;
+    background: none; border: none; outline: none;
+  }
+  .menu-btn:hover { color: var(--gold); }
+
+  .sidebar {
+    position: fixed; top: 0; right: -320px; width: 320px; height: 100vh;
+    background: var(--green-deep); z-index: 1001; transition: right 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: -5px 0 25px rgba(0,0,0,0.3); padding: 40px 30px; display: flex; flex-direction: column;
+  }
+  .sidebar.active { right: 0; }
+  
+  .close-btn {
+    align-self: flex-end; font-size: 32px; color: rgba(255,255,255,0.6);
+    cursor: pointer; background: none; border: none; margin-bottom: 20px; transition: 0.3s;
+  }
+  .close-btn:hover { color: var(--white); }
+
+  .sidebar-profile { text-align: center; margin-bottom: 30px; display: flex; flex-direction: column; align-items: center; }
+  .sidebar-profile img {
+    width: 100px; height: 100px; border-radius: 50%; object-fit: cover; object-position: center top;
+    border: 3px solid var(--gold); margin-bottom: 15px; flex-shrink: 0;
+  }
+  .sidebar-profile h3 { color: var(--white); font-size: 18px; font-weight: 700; }
+  .sidebar-profile p { color: var(--gold-light); font-size: 13px; }
+
+  .sidebar-links { list-style: none; display: flex; flex-direction: column; gap: 20px; }
+  .sidebar-links a {
+    text-decoration: none; color: rgba(255,255,255,0.8); font-size: 16px; font-weight: 600;
+    transition: 0.3s; display: block;
+  }
+  .sidebar-links a:hover { color: var(--gold-light); transform: translateX(5px); }
+
+  /* Overlay */
+  .overlay {
+    position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+    background: rgba(0,0,0,0.5); z-index: 1000; display: none; opacity: 0; transition: 0.3s;
+  }
+  .overlay.active { display: block; opacity: 1; }
+
+  /* ─── HERO ─── */
+  #hero {
+    min-height: 100vh; background: linear-gradient(135deg, var(--green-deep) 0%, #0d2e1c 40%, #1a3d28 100%);
+    display: flex; align-items: center; justify-content: center;
+    padding: 120px 40px 80px; position: relative; overflow: hidden;
+  }
+  .hero-content { position: relative; z-index: 2; text-align: center; display: flex; flex-direction: column; align-items: center; max-width: 800px; }
+  
+  .hero-badge {
+    display: inline-flex; align-items: center; gap: 10px; background: rgba(201,168,76,0.15); border: 1px solid rgba(201,168,76,0.4);
+    padding: 8px 20px; border-radius: 100px; color: var(--gold-light); font-size: 14px; font-weight: 600; margin-bottom: 24px;
+  }
+  .hero-name { font-size: clamp(48px, 7vw, 90px); font-weight: 900; color: var(--white); line-height: 1.05; margin-bottom: 12px; }
+  .hero-name span { color: var(--green-light); }
+  .hero-title { font-size: clamp(22px, 3.5vw, 36px); color: var(--gold); font-weight: 700; margin-bottom: 32px; letter-spacing: 1px; }
+  .hero-desc { font-size: clamp(16px, 2vw, 19px); line-height: 1.9; color: rgba(255,255,255,0.8); max-width: 700px; margin-bottom: 50px; }
+  
+  .hero-ctas { display: flex; gap: 20px; flex-wrap: wrap; justify-content: center; }
+  .btn-primary {
+    background: linear-gradient(135deg, var(--gold), var(--gold-light)); color: var(--green-deep);
+    padding: 16px 48px; border-radius: 8px; font-size: 17px; font-weight: 700; text-decoration: none; box-shadow: 0 4px 20px rgba(201,168,76,0.4); transition: 0.3s;
+  }
+  .btn-primary:hover { transform: translateY(-3px); box-shadow: 0 8px 30px rgba(201,168,76,0.5); }
+  
+  .btn-outline {
+    border: 1.5px solid rgba(255,255,255,0.3); color: rgba(255,255,255,0.9);
+    padding: 16px 48px; border-radius: 8px; font-size: 17px; font-weight: 600; text-decoration: none; transition: 0.3s;
+  }
+  .btn-outline:hover { border-color: var(--gold); background: rgba(201,168,76,0.08); }
+  
+  .hero-geo { position: absolute; border: 1px solid rgba(201,168,76,0.15); border-radius: 50%; pointer-events: none; }
+  .hero-geo-1 { width: 600px; height: 600px; top: -150px; right: -200px; }
+  .hero-geo-2 { width: 350px; height: 350px; bottom: -100px; left: -100px; }
+
+  /* ─── SECTIONS ─── */
+  section { padding: 100px 80px; }
+  .section-label { display: inline-flex; align-items: center; gap: 12px; font-size: 14px; font-weight: 700; color: var(--gold); margin-bottom: 12px; text-transform: uppercase; letter-spacing: 2px; }
+  .section-label::before { content: ''; width: 40px; height: 2px; background: var(--green-mid); }
+  .section-title { font-size: clamp(36px, 5vw, 60px); font-weight: 900; margin-bottom: 60px; color: var(--green-deep); }
+  
+  /* ─── ABOUT ─── */
+  #about { background: var(--white); }
+  .about-text { margin-bottom: 50px; }
+  .about-text p { font-size: clamp(17px, 2.2vw, 19px); line-height: 1.9; color: #3a5a45; margin-bottom: 24px; font-weight: 600; }
+  .about-cards-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; }
+  .mini-card { background: var(--green-pale); border: 1px solid rgba(76,175,125,0.2); padding: 24px; border-radius: 12px; text-align: center; transition: 0.3s; }
+  .mini-card:hover { transform: translateY(-5px); box-shadow: 0 10px 20px rgba(26,74,46,0.1); }
+  .mini-card h4 { font-size: 20px; color: var(--green-deep); font-weight: 800; margin-bottom: 8px; }
+
+  /* ─── EXPERIENCE ─── */
+  #experience { background: linear-gradient(170deg, var(--white) 0%, var(--green-pale) 100%); }
+  .timeline { position: relative; max-width: 800px; margin: 0 auto; }
+  .timeline::before { content: ''; position: absolute; left: 20px; top: 0; bottom: 0; width: 2px; background: rgba(201,168,76,0.3); }
+  .timeline-item { position: relative; padding-left: 60px; margin-bottom: 48px; }
+  .timeline-item:last-child { margin-bottom: 0; }
+  .timeline-dot { position: absolute; left: 11px; top: 5px; width: 20px; height: 20px; border-radius: 50%; background: var(--gold); border: 4px solid var(--white); box-shadow: 0 0 0 2px rgba(201,168,76,0.3); }
+  .timeline-content { background: var(--white); padding: 28px; border-radius: 12px; border: 1px solid rgba(45,122,79,0.1); box-shadow: 0 5px 15px rgba(0,0,0,0.03); transition: 0.3s; }
+  .timeline-content:hover { transform: translateY(-3px); box-shadow: 0 10px 25px rgba(26,74,46,0.08); border-color: var(--gold-light); }
+  .time-date { display: inline-block; padding: 4px 12px; background: var(--green-pale); color: var(--green-deep); border-radius: 100px; font-size: 13px; font-weight: 700; margin-bottom: 12px; }
+  .timeline-content h3 { font-size: 22px; color: var(--green-deep); font-weight: 800; margin-bottom: 6px; }
+  .timeline-content h4 { font-size: 17px; color: var(--text-muted); font-weight: 600; }
+
+  /* ─── SKILLS ─── */
+  #skills { background: var(--white); }
+  .skills-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 30px; }
+  .skill-card { background: var(--white); border: 1px solid rgba(45,122,79,0.12); border-radius: 16px; padding: 40px 30px; transition: 0.3s; box-shadow: 0 5px 15px rgba(0,0,0,0.02); }
+  .skill-card:hover { transform: translateY(-5px); box-shadow: 0 15px 30px rgba(26,74,46,0.1); border-color: var(--green-light); }
+  .skill-icon { font-size: 36px; margin-bottom: 20px; display: block; }
+  .skill-card h4 { font-size: 22px; font-weight: 800; color: var(--green-deep); margin-bottom: 12px; }
+  .skill-card p { font-size: 16px; color: var(--text-muted); line-height: 1.7; }
+
+  /* ─── METHODOLOGY & TOOLS ─── */
+  #methodology { background: var(--green-deep); color: white; }
+  #methodology .section-title { color: white; }
+  .method-steps { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; margin-bottom: 60px; }
+  .method-step { background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); border-radius: 20px; padding: 48px 30px; }
+  .step-number { font-size: 60px; font-weight: 900; color: rgba(201,168,76,0.3); margin-bottom: 12px; line-height: 1; }
+  .method-step h3 { font-size: 24px; font-weight: 800; margin-bottom: 16px; color: var(--white); }
+  .method-step p { color: rgba(255,255,255,0.7); line-height: 1.8; font-size: 16px; }
+
+  .tools-section h3 { font-size: 22px; color: var(--gold-light); margin-bottom: 24px; font-weight: 700; }
+  .tools-tags { display: flex; flex-wrap: wrap; gap: 14px; }
+  .tool-tag {
+    background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.2);
+    padding: 12px 24px; border-radius: 100px; font-size: 15px; font-weight: 600; color: var(--white);
+    transition: 0.3s;
+  }
+  .tool-tag:hover { background: rgba(201,168,76,0.2); border-color: var(--gold-light); }
+
+  /* ─── ACHIEVEMENTS ─── */
+  #achievements { background: var(--white); }
+  .achieve-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 24px; }
+  .achieve-item {
+    display: flex; align-items: center; gap: 20px; padding: 30px 24px; border-radius: 14px;
+    background: var(--green-pale); border: 1px solid rgba(76,175,125,0.2); transition: 0.3s;
+  }
+  .achieve-item:hover { transform: translateY(-5px); background: #e0f0e8; border-color: var(--green-light); box-shadow: 0 10px 20px rgba(26,74,46,0.05); }
+  .achieve-icon {
+    width: 60px; height: 60px; flex-shrink: 0; background: var(--green-deep); border-radius: 12px;
+    display: flex; align-items: center; justify-content: center; font-size: 28px; color: white;
+  }
+  .achieve-item p { font-size: 16px; line-height: 1.7; color: var(--green-deep); font-weight: 700; }
+
+  /* ─── BOOK SECTION ─── */
+  #publication { background: linear-gradient(170deg, var(--green-pale) 0%, var(--white) 100%); }
+  .book-showcase { display: grid; grid-template-columns: 1fr 380px; gap: 60px; align-items: center; }
+  .book-info h2 { font-size: clamp(40px, 5vw, 56px); font-weight: 900; color: var(--green-deep); margin-bottom: 12px; }
+  .book-info h3 { font-size: 24px; color: var(--green-mid); margin-bottom: 28px; font-weight: 700; }
+  .book-info p { font-size: 18px; line-height: 1.9; color: var(--text-muted); margin-bottom: 24px; font-weight: 600; }
+  .book-tag { display: inline-block; background: var(--green-deep); color: var(--white); padding: 12px 28px; border-radius: 100px; font-size: 16px; font-weight: 700; margin-top: 16px; }
+  .book-cover-wrap img { width: 100%; border-radius: 16px; box-shadow: 0 20px 50px rgba(26,74,46,0.2); }
+
+  /* ─── CONTACT ─── */
+  #contact { background: linear-gradient(135deg, var(--green-deep) 0%, #0a1f12 100%); color: white; }
+  #contact .section-title { color: white; }
+  .contact-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 30px; }
+  .contact-item { display: flex; align-items: center; gap: 24px; padding: 24px; background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.1); border-radius: 14px; text-decoration: none; color: white; transition: 0.3s; }
+  .contact-item:hover { background: rgba(255,255,255,0.1); border-color: var(--gold-light); transform: translateY(-3px); }
+  
+  .contact-item-icon { width: 60px; height: 60px; flex-shrink: 0; border-radius: 14px; display: flex; align-items: center; justify-content: center; font-size: 30px; }
+  .contact-item.whatsapp .contact-item-icon { background: var(--whatsapp-green); color: white; }
+  .contact-item.linkedin .contact-item-icon { background: var(--linkedin-blue); color: white; }
+  .contact-item.youtube .contact-item-icon { background: var(--youtube-red); color: white; }
+  .contact-item.default .contact-item-icon { background: linear-gradient(135deg, var(--gold), var(--gold-light)); color: var(--green-deep); }
+
+  .contact-item-text .label { font-size: 14px; color: rgba(255,255,255,0.6); font-weight: 600; text-transform: uppercase; letter-spacing: 1px; }
+  .contact-item-text .value { font-size: 17px; font-weight: 700; margin-top: 6px; }
+
+  /* ─── FOOTER ─── */
+  footer { background: #050f08; text-align: center; padding: 28px; color: rgba(255,255,255,0.5); font-size: 16px; }
+  footer span { color: var(--gold); font-weight: 700; }
+
+  /* ─── RESPONSIVE ─── */
+  @media (max-width: 900px) {
+    header { padding: 0 20px; }
+    #hero { padding: 100px 24px 60px; text-align: center; gap: 40px; }
+    .hero-name { line-height: 1.1; }
+    .hero-desc { margin: 0 auto 30px; }
+    section { padding: 80px 24px; }
+    .timeline::before { left: 15px; }
+    .timeline-item { padding-left: 45px; }
+    .timeline-dot { left: 6px; }
+    .book-showcase { grid-template-columns: 1fr; display: flex; flex-direction: column-reverse; }
+  }
+</style>
 </head>
-
 <body>
 
-  <nav>
-    <div class="nav-brand">م/ محسن علوان</div>
-    <ul class="nav-links">
-      <li><a href="#about">الخبرة المهنية</a></li>
-      <li><a href="#skills">المهارات</a></li>
-      <li><a href="#methodology">المنهجية</a></li>
-      <li><a href="#achievements">الإنجازات</a></li>
-      <li><a href="#publication">الكتاب</a></li>
-      <li><a href="#contact">تواصل</a></li>
-    </ul>
-  </nav>
+<header>
+  <div class="header-brand">Eng. Mohsen</div>
+  <button class="menu-btn" onclick="toggleMenu()">☰</button>
+</header>
 
-  <section id="hero">
-    <div class="hero-content">
-      <div class="hero-badge">أخصائي مكافحة آفات الصحة العامة</div>
-      <h1 class="hero-name">م/ محسن <span>علوان</span></h1>
-      <p class="hero-title">خبير أنظمة المكافحة المتكاملة (IPM)</p>
-      <p class="hero-desc">
-        متخصص في مكافحة الآفات مع خبرة قوية في إدارة مواقع متعددة، والتركيز على أنظمة المكافحة المتكاملة (IPM) — لتقليل
-        الاعتماد على المبيدات مع الحفاظ على كفاءة تشغيلية عالية وضمان بيئة آمنة.
-      </p>
-      <div class="hero-ctas">
-        <a href="#contact" class="btn-primary">تواصل معي الآن</a>
-        <a href="#publication" class="btn-outline">تصفح كتاب البداية 📖</a>
+<div class="overlay" onclick="toggleMenu()"></div>
+
+<div class="sidebar" id="sidebar">
+  <button class="close-btn" onclick="toggleMenu()">✖</button>
+  
+  <div class="sidebar-profile">
+    <img src="https://i.ibb.co/PsQQ8bcH/Whats-App-Image-2026-05-07-at-6-01-19-PM.jpg" alt="Mohsen Elwan">
+    <h3>Eng. Mohsen Elwan</h3>
+    <p>IPM Expert</p>
+  </div>
+
+  <ul class="sidebar-links">
+    <li><a href="#hero" onclick="toggleMenu()">Home</a></li>
+    <li><a href="#about" onclick="toggleMenu()">About Me</a></li>
+    <li><a href="#experience" onclick="toggleMenu()">Experience</a></li>
+    <li><a href="#skills" onclick="toggleMenu()">Skills</a></li>
+    <li><a href="#methodology" onclick="toggleMenu()">Methodology</a></li>
+    <li><a href="#achievements" onclick="toggleMenu()">Achievements</a></li>
+    <li><a href="#publication" onclick="toggleMenu()">Publication</a></li>
+    <li><a href="#contact" onclick="toggleMenu()">Contact</a></li>
+  </ul>
+</div>
+
+<section id="hero">
+  <div class="hero-geo hero-geo-1"></div>
+  <div class="hero-geo hero-geo-2"></div>
+  
+  <div class="hero-content">
+    <div class="hero-badge">Public Health Pest Control Specialist</div>
+    <h1 class="hero-name">Eng. Mohsen <br><span>Elwan</span></h1>
+    <p class="hero-title">Integrated Pest Management (IPM) Expert</p>
+    <p class="hero-desc">
+      Specialized in pest control with strong experience managing multiple sites, focusing on Integrated Pest Management (IPM) to reduce pesticide reliance while maintaining high operational efficiency and ensuring a safe environment.
+    </p>
+    <div class="hero-ctas">
+      <a href="#contact" class="btn-primary">Get In Touch Now</a>
+      <a href="#publication" class="btn-outline">View My Book 📖</a>
+    </div>
+  </div>
+</section>
+
+<section id="about">
+  <div class="section-label">Who Am I</div>
+  <h2 class="section-title">Professional <span>Background</span></h2>
+  
+  <div class="about-text">
+    <p>I am Eng. Mohsen Elwan, a Public Health Pest Control Specialist and Field Operations Manager. I have extensive experience planning and executing IPM programs across diverse sites, including luxury residential complexes, commercial facilities, and large-scale projects.</p>
+    <p>I firmly believe that effective pest control begins with understanding the source of the problem, not simply rushing to apply pesticides. This philosophy forms the foundation of my work and is the core message of my book, "The Beginning".</p>
+  </div>
+
+  <div class="about-cards-grid">
+    <div class="mini-card">
+      <h4>Site Management</h4>
+      <span style="font-size: 13px; color: var(--text-muted);">Pest Control Operations</span>
+    </div>
+    <div class="mini-card">
+      <h4>Program Development</h4>
+      <span style="font-size: 13px; color: var(--text-muted);">Strategic Planning</span>
+    </div>
+    <div class="mini-card">
+      <h4>Field Supervision</h4>
+      <span style="font-size: 13px; color: var(--text-muted);">Quality Assurance</span>
+    </div>
+    <div class="mini-card">
+      <h4>Team Leadership</h4>
+      <span style="font-size: 13px; color: var(--text-muted);">Training & Evaluation</span>
+    </div>
+  </div>
+</section>
+
+<section id="experience">
+  <div class="section-label">Career Path</div>
+  <h2 class="section-title">Professional <span>Experience</span></h2>
+  
+  <div class="timeline">
+    <div class="timeline-item">
+      <div class="timeline-dot"></div>
+      <div class="timeline-content">
+        <span class="time-date">October 2025 – Present</span>
+        <h3>Madinet Masr (Chum Community)</h3>
+        <h4>Pest Control Lead Engineer</h4>
       </div>
     </div>
-
-    <div class="hero-photo-wrap">
-      <div class="hero-photo-frame">
-        <img src="https://i.ibb.co/PsQQ8bcH/Whats-App-Image-2026-05-07-at-6-01-19-PM.jpg" alt="م/ محسن علوان">
+    <div class="timeline-item">
+      <div class="timeline-dot"></div>
+      <div class="timeline-content">
+        <span class="time-date">June 2025 – October 2025</span>
+        <h3>Khedma for Resort Management (Palm Hills)</h3>
+        <h4>Assistant Pest Control Department Manager</h4>
       </div>
     </div>
-  </section>
-
-  <section id="about">
-    <div class="section-label">من أنا</div>
-    <h2 class="section-title">التخصص والخبرة <span>المهنية</span></h2>
-
-    <div class="about-text">
-      <p>أنا م/ محسن علوان، متخصص في مكافحة آفات الصحة العامة وإدارة العمليات الميدانية. أمتلك خبرة واسعة في تخطيط
-        وتنفيذ برامج المكافحة المتكاملة (IPM) عبر مواقع متنوعة تشمل المجمعات السكنية الفاخرة والمنشآت التجارية والمشاريع
-        الكبرى.</p>
-      <p>أؤمن بأن المكافحة الفعالة تبدأ بفهم مصدر المشكلة وليس بالاندفاع نحو المبيدات. هذا الفلسفة هي أساس عملي واللبنة
-        الأولى لكتابي "البداية".</p>
-    </div>
-
-    <div class="about-cards-grid">
-      <div class="mini-card">
-        <h4>إدارة المواقع</h4>
-        <span>Pest Control Site Management</span>
-      </div>
-      <div class="mini-card">
-        <h4>تطوير البرامج</h4>
-        <span>Program Development</span>
-      </div>
-      <div class="mini-card">
-        <h4>الإشراف الميداني</h4>
-        <span>Field Supervision</span>
-      </div>
-      <div class="mini-card">
-        <h4>إدارة الفرق</h4>
-        <span>Team Management</span>
+    <div class="timeline-item">
+      <div class="timeline-dot"></div>
+      <div class="timeline-content">
+        <span class="time-date">February 2024 – June 2025</span>
+        <h3>Kanza Group</h3>
+        <h4>Pest Control Department Manager</h4>
       </div>
     </div>
-  </section>
-
-  <section id="skills">
-    <div class="section-label">الكفاءات</div>
-    <h2 class="section-title">المهارات <span>الجوهرية</span></h2>
-
-    <div class="skills-grid">
-      <div class="skill-card">
-        <span class="skill-icon">🔍</span>
-        <h4>الفحص وتقييم الإصابة</h4>
-        <p>تقييم دقيق لمستويات الإصابة ونقاط الدخول والظروف البيئية قبل اتخاذ أي إجراء.</p>
-      </div>
-      <div class="skill-card">
-        <span class="skill-icon">🌿</span>
-        <h4>تخطيط وتنفيذ IPM</h4>
-        <p>تصميم برامج المكافحة المتكاملة وتنفيذها بكفاءة مع تقليل الاعتماد على المبيدات الكيميائية.</p>
-      </div>
-      <div class="skill-card">
-        <span class="skill-icon">👥</span>
-        <h4>إدارة الفرق والتقييم</h4>
-        <p>قيادة الفرق الميدانية وتقييم أدائها وتطوير كفاءاتها التشغيلية باستمرار.</p>
-      </div>
-      <div class="skill-card">
-        <span class="skill-icon">📊</span>
-        <h4>التقارير الفنية والتحليل</h4>
-        <p>إعداد تقارير احترافية دقيقة وتحليل البيانات لاتخاذ قرارات مبنية على معطيات حقيقية.</p>
-      </div>
-      <div class="skill-card">
-        <span class="skill-icon">🤝</span>
-        <h4>التعامل مع العملاء</h4>
-        <p>مهارات عالية في التواصل وحل المشكلات وبناء علاقات طويلة الأمد مع العملاء.</p>
-      </div>
-      <div class="skill-card">
-        <span class="skill-icon">🛡️</span>
-        <h4>الجودة والسلامة</h4>
-        <p>الالتزام الكامل بمعايير الجودة وبروتوكولات السلامة في جميع العمليات الميدانية.</p>
+    <div class="timeline-item">
+      <div class="timeline-dot"></div>
+      <div class="timeline-content">
+        <span class="time-date">January 2020 – December 2022</span>
+        <h3>Eco Med Group</h3>
+        <h4>Site Manager</h4>
       </div>
     </div>
-  </section>
+  </div>
+</section>
 
-  <section id="methodology">
-    <div class="section-label">نهج العمل</div>
-    <h2 class="section-title">المنهجية <span>المهنية</span></h2>
+<section id="skills">
+  <div class="section-label">Competencies</div>
+  <h2 class="section-title">Core <span>Skills</span></h2>
+  
+  <div class="skills-grid">
+    <div class="skill-card">
+      <span class="skill-icon">🔍</span>
+      <h4>Inspection & Assessment</h4>
+      <p>Accurately evaluating infestation levels, entry points, and environmental conditions prior to any action.</p>
+    </div>
+    <div class="skill-card">
+      <span class="skill-icon">🌿</span>
+      <h4>IPM Planning & Execution</h4>
+      <p>Designing and implementing sustainable pest control strategies that minimize reliance on chemical pesticides.</p>
+    </div>
+    <div class="skill-card">
+      <span class="skill-icon">👥</span>
+      <h4>Team Management</h4>
+      <p>Leading field teams, evaluating their performance, and continuously developing their operational competencies.</p>
+    </div>
+    <div class="skill-card">
+      <span class="skill-icon">📊</span>
+      <h4>Technical Reporting</h4>
+      <p>Preparing professional, accurate reports and analyzing data to make well-informed, data-driven decisions.</p>
+    </div>
+  </div>
+</section>
 
-    <div class="method-steps">
-      <div class="method-step">
-        <div class="step-number">01</div>
-        <h3>الفحص والتقييم</h3>
-        <p>تقييم دقيق لمستويات الإصابة ونقاط الدخول والظروف البيئية قبل اتخاذ أي إجراء — لأن الحل الصحيح يبدأ بالتشخيص
-          الصحيح.</p>
+<section id="methodology">
+  <div class="section-label">Work Approach</div>
+  <h2 class="section-title">Professional <span>Methodology</span></h2>
+  
+  <div class="method-steps">
+    <div class="method-step">
+      <div class="step-number">01</div>
+      <h3>Thorough Inspection</h3>
+      <p>Careful evaluation of infestation levels and entry points. The right solution always starts with the correct diagnosis.</p>
+    </div>
+    <div class="method-step">
+      <div class="step-number">02</div>
+      <h3>Smart Implementation</h3>
+      <p>Selecting the most effective solutions, prioritizing sanitation and source control before resorting to pesticides.</p>
+    </div>
+    <div class="method-step">
+      <div class="step-number">03</div>
+      <h3>Continuous Monitoring</h3>
+      <p>Ongoing assessment and refinement of control plans to maintain control over infestation sources and achieve sustainable results.</p>
+    </div>
+  </div>
+
+  <div class="tools-section">
+    <h3>Tools & Control Methods</h3>
+    <div class="tools-tags">
+      <span class="tool-tag">🧹 Sanitation & Source Control</span>
+      <span class="tool-tag">🧪 Targeted Pesticide Application</span>
+      <span class="tool-tag">🐀 Rodent Bait Stations</span>
+      <span class="tool-tag">🪤 Sticky Traps & Monitoring Tools</span>
+      <span class="tool-tag">📋 IPM Protocols</span>
+      <span class="tool-tag">📊 Technical Reporting</span>
+    </div>
+  </div>
+</section>
+
+<section id="achievements">
+  <div class="section-label">Results</div>
+  <h2 class="section-title">Professional <span>Achievements</span></h2>
+  
+  <div class="achieve-grid">
+    <div class="achieve-item">
+      <div class="achieve-icon">🏆</div>
+      <p>Managed high-performance field teams with continuous operational stability and notable productivity.</p>
+    </div>
+    <div class="achieve-item">
+      <div class="achieve-icon">🎯</div>
+      <p>Controlled infestation sources and improved pest management efficiency across multiple sites.</p>
+    </div>
+    <div class="achieve-item">
+      <div class="achieve-icon">⚙️</div>
+      <p>Optimized control plans and resource allocation to achieve maximum operational efficiency.</p>
+    </div>
+    <div class="achieve-item">
+      <div class="achieve-icon">📉</div>
+      <p>Significantly reduced pest complaints through proactive application of Integrated Pest Management.</p>
+    </div>
+    <div class="achieve-item">
+      <div class="achieve-icon">⭐</div>
+      <p>Enhanced service quality and customer satisfaction in luxury residential complexes.</p>
+    </div>
+    <div class="achieve-item">
+      <div class="achieve-icon">🌱</div>
+      <p>Reduced reliance on chemical pesticides through sustainable preventive solutions.</p>
+    </div>
+  </div>
+</section>
+
+<section id="publication">
+  <div class="book-showcase">
+    <div class="book-info">
+      <div class="section-label">Publications</div>
+      <h2>The Beginning</h2>
+      <h3>In the World of Public Health Pest Control</h3>
+      <p>A simplified practical guide designed specifically for fresh graduates and those interested in entering the field of public health pest control. The book provides essential industry knowledge and practical field experience in a clear and direct manner.</p>
+      <p>It helps the reader understand the nature of the profession and start professionally without the need to study multiple complex sources — everything you need in one place.</p>
+      <div class="book-tag">Authored by Eng. Mohsen Elwan</div>
+    </div>
+    <div class="book-cover-wrap">
+      <img src="https://i.ibb.co/RTzdrXBH/1777030536317.jpg" alt="The Beginning Book Cover">
+    </div>
+  </div>
+</section>
+
+<section id="contact">
+  <div class="section-label">Contact Information</div>
+  <h2 class="section-title">Let's <span>Connect</span></h2>
+  
+  <div class="contact-grid">
+    <a href="https://wa.me/201127395377" target="_blank" rel="noopener noreferrer" class="contact-item whatsapp">
+      <div class="contact-item-icon">
+        <svg fill="currentColor" width="1em" height="1em" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12.004 2c-5.514 0-10 4.486-10 10 0 1.95.56 3.778 1.536 5.33l-1.42 4.67 4.896-1.34c1.472.784 3.15.14 4.988.14 5.514 0 10-4.486 10-10 0-5.514-4.486-10-10-10zm.006 18c-1.636 0-3.178-.46-4.508-1.258l-.326-.192-2.88.79.802-2.634-.216-.346C3.968 15.116 3.5 13.626 3.5 12.002c0-4.686 3.814-8.5 8.5-8.5s8.5 3.814 8.5 8.5-3.814 8.5-8.5 8.5zm3.896-5.074l-1.012-1.28c-.126-.16-.342-.236-.554-.188-.21.048-.396.196-.464.382l-.18.498c-.144.4-.492.678-.912.678-.988 0-1.896-.706-2.222-1.722l-.18-.498c-.142-.396-.134-.848.026-1.232l.18-.498c.068-.186.054-.396-.038-.564-.09-.168-.266-.282-.472-.326l-1.04-.19c-.318-.05-.634.126-.732.444l-.178.498c-.198.544-.24.116.126.732 1.35 1.528 3.57 2.052 5.352 1.258l.18-.498c.08-.22.302-.37.534-.37.23 0 .452.15.532.37l.18.498c.1.282.414.436.732.436s.632-.154.732-.436l.178-.498c.112-.316-.048-.65-.35-.764z"/></svg>
       </div>
-      <div class="method-step">
-        <div class="step-number">02</div>
-        <h3>التنفيذ الذكي</h3>
-        <p>اختيار الحلول الأكثر فاعلية مع إعطاء الأولوية للصرف الصحي والتحكم في المصدر قبل اللجوء إلى المبيدات.</p>
+      <div class="contact-item-text">
+        <div class="label">WhatsApp</div>
+        <div class="value">+20 112 739 5377</div>
       </div>
-      <div class="method-step">
-        <div class="step-number">03</div>
-        <h3>المتابعة والتحسين</h3>
-        <p>تقييم مستمر وتحسين خطط المكافحة للحفاظ على السيطرة على مصادر الإصابة وتحقيق نتائج تشغيلية مستدامة.</p>
+    </a>
+
+    <a href="tel:+201031213243" class="contact-item default">
+      <div class="contact-item-icon">📞</div>
+      <div class="contact-item-text">
+        <div class="label">Phone Call</div>
+        <div class="value">+20 103 121 3243</div>
+      </div>
+    </a>
+
+    <a href="mailto:mohsenelwan166@gmail.com" class="contact-item default">
+      <div class="contact-item-icon">✉️</div>
+      <div class="contact-item-text">
+        <div class="label">Email Address</div>
+        <div class="value">mohsenelwan166@gmail.com</div>
+      </div>
+    </a>
+
+    <a href="https://linkedin.com/in/mohsen-elwan-8b7b5b2b8" target="_blank" rel="noopener noreferrer" class="contact-item linkedin">
+      <div class="contact-item-icon">
+        <svg fill="currentColor" width="1em" height="1em" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.32 1.3v-1.11H9.51v8.37h3.37v-4.67c0-.28.23-.51.51-.51s.51.23.51.51v4.67H18.5M7.65 9.17A1.5 1.5 0 0 0 6.15 7.67 1.5 1.5 0 0 0 4.65 9.17A1.5 1.5 0 0 0 6.15 10.67 1.5 1.5 0 0 0 7.65 9.17m-1.5 9.33V10h3V18.5h-3z"/></svg>
+      </div>
+      <div class="contact-item-text">
+        <div class="label">LinkedIn Profile</div>
+        <div class="value">Mohsen Elwan</div>
+      </div>
+    </a>
+
+    <a href="https://www.youtube.com/@MohsenElwan-P.C" target="_blank" rel="noopener noreferrer" class="contact-item youtube">
+      <div class="contact-item-icon">
+        <svg fill="currentColor" width="1em" height="1em" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M21.582 6.186a2.81 2.81 0 0 0-1.972-1.99c-1.74-.467-8.71-.467-8.71-.467s-6.97 0-8.71.467a2.81 2.81 0 0 0-1.972 1.99c-.467 1.74-.467 5.37-.467 5.37s0 3.63.467 5.37a2.81 2.81 0 0 0 1.972 1.99c1.74.467 8.71.467 8.71.467s6.97 0 8.71-.467a2.81 2.81 0 0 0 1.972-1.99c.467-1.74.467-5.37.467-5.37s0-3.63-.467-5.37zm-11.232 7.97V9.844l4.62 2.156-4.62 2.156z"/></svg>
+      </div>
+      <div class="contact-item-text">
+        <div class="label">YouTube Channel</div>
+        <div class="value">@MohsenElwan-P.C</div>
+      </div>
+    </a>
+
+    <div class="contact-item default" style="cursor: default;">
+      <div class="contact-item-icon">📍</div>
+      <div class="contact-item-text">
+        <div class="label">Location</div>
+        <div class="value">Giza, Egypt</div>
       </div>
     </div>
+  </div>
+</section>
 
-    <div class="tools-section">
-      <h3>أدوات وأساليب التحكم</h3>
-      <div class="tools-tags">
-        <span class="tool-tag">🧹 الصرف الصحي والتحكم في المصدر</span>
-        <span class="tool-tag">🧪 تطبيق المبيدات عند الضرورة</span>
-        <span class="tool-tag">🐀 محطات الطعم للقوارض</span>
-        <span class="tool-tag">🪤 مصائد اللاصق وأدوات المراقبة</span>
-        <span class="tool-tag">📋 بروتوكولات IPM</span>
-        <span class="tool-tag">📊 التقارير الفنية</span>
-      </div>
-    </div>
-  </section>
+<footer>
+  &copy; 2026 <span>Eng. Mohsen Elwan</span>. All rights reserved.
+</footer>
 
-  <section id="achievements">
-    <div class="section-label">النتائج</div>
-    <h2 class="section-title">الإنجازات <span>المهنية</span></h2>
-
-    <div class="achieve-grid">
-      <div class="achieve-item">
-        <div class="achieve-icon">🏆</div>
-        <p>إدارة فرق ميدانية عالية الأداء مع استقرار تشغيلي متواصل وكفاءة إنتاجية ملحوظة</p>
-      </div>
-      <div class="achieve-item">
-        <div class="achieve-icon">🎯</div>
-        <p>السيطرة على مصادر الإصابة وتحسين كفاءة إدارة الآفات عبر المواقع المتعددة</p>
-      </div>
-      <div class="achieve-item">
-        <div class="achieve-icon">⚙️</div>
-        <p>تحسين خطط المكافحة وتخصيص الموارد لتحقيق أقصى كفاءة تشغيلية</p>
-      </div>
-      <div class="achieve-item">
-        <div class="achieve-icon">📉</div>
-        <p>تقليص ملحوظ في شكاوى الآفات من خلال التطبيق الاستباقي لنظام المكافحة المتكاملة</p>
-      </div>
-      <div class="achieve-item">
-        <div class="achieve-icon">⭐</div>
-        <p>تعزيز جودة الخدمة ورضا العملاء في المجمعات السكنية الفاخرة</p>
-      </div>
-      <div class="achieve-item">
-        <div class="achieve-icon">🌱</div>
-        <p>تقليل الاعتماد على المبيدات الكيميائية عبر الحلول الوقائية المستدامة</p>
-      </div>
-    </div>
-  </section>
-
-  <section id="publication">
-    <div class="book-showcase">
-      <div class="book-info">
-        <div class="section-label">المنشورات</div>
-        <h2>كتاب البداية</h2>
-        <h3>في عالم مكافحة آفات الصحة العامة</h3>
-        <p>دليل عملي مبسط صُمم خصيصاً للخريجين الجدد والمهتمين بالدخول إلى مجال مكافحة آفات الصحة العامة، يُقدم الكتاب
-          المعرفة الأساسية للصناعة والخبرة الميدانية العملية بأسلوب واضح ومباشر.</p>
-        <p>يُساعد القارئ على فهم طبيعة المهنة والبدء بشكل احترافي دون الحاجة إلى دراسة مصادر متعددة ومعقدة — كل ما
-          تحتاجه في مكان واحد.</p>
-        <div class="book-tag">إعداد م/ محسن علوان</div>
-      </div>
-      <div class="book-cover-wrap">
-        <img src="https://i.ibb.co/RTzdrXBH/1777030536317.jpg" alt="غلاف كتاب البداية">
-      </div>
-    </div>
-  </section>
-
-  <section id="contact">
-    <div class="section-label">معلومات التواصل</div>
-    <h2 class="section-title">لنبقَ على <span>تواصل</span></h2>
-
-    <div class="contact-grid">
-      <a href="https://wa.me/201127395377" target="_blank" rel="noopener noreferrer" class="contact-item">
-        <div class="contact-item-icon">💬</div>
-        <div class="contact-item-text">
-          <div class="label">واتساب (محادثة مباشرة)</div>
-          <div class="value">+20 112 739 5377</div>
-        </div>
-      </a>
-
-      <a href="tel:+201031213243" class="contact-item">
-        <div class="contact-item-icon">📞</div>
-        <div class="contact-item-text">
-          <div class="label">اتصال هاتفي</div>
-          <div class="value">+20 103 121 3243</div>
-        </div>
-      </a>
-
-      <a href="mailto:mohsenelwan166@gmail.com" class="contact-item">
-        <div class="contact-item-icon">✉️</div>
-        <div class="contact-item-text">
-          <div class="label">البريد الإلكتروني</div>
-          <div class="value">mohsenelwan166@gmail.com</div>
-        </div>
-      </a>
-
-      <a href="https://linkedin.com/in/mohsen-elwan-8b7b5b2b8" target="_blank" rel="noopener noreferrer"
-        class="contact-item">
-        <div class="contact-item-icon">🔗</div>
-        <div class="contact-item-text">
-          <div class="label">حساب لينكد إن</div>
-          <div class="value">Mohsen Elwan</div>
-        </div>
-      </a>
-
-      <a href="https://www.youtube.com/@MohsenElwan-P.C" target="_blank" rel="noopener noreferrer" class="contact-item">
-        <div class="contact-item-icon">▶️</div>
-        <div class="contact-item-text">
-          <div class="label">قناة اليوتيوب</div>
-          <div class="value">@MohsenElwan-P.C</div>
-        </div>
-      </a>
-
-      <div class="contact-item" style="cursor: default;">
-        <div class="contact-item-icon">📍</div>
-        <div class="contact-item-text">
-          <div class="label">الموقع</div>
-          <div class="value">الجيزة، مصر</div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <footer>
-    &copy; 2026 <span>م/ محسن علوان</span>. جميع الحقوق محفوظة.
-  </footer>
+<script>
+  function toggleMenu() {
+    const sidebar = document.getElementById('sidebar');
+    const overlay = document.querySelector('.overlay');
+    sidebar.classList.toggle('active');
+    overlay.classList.toggle('active');
+  }
+</script>
 
 </body>
-
 </html>
