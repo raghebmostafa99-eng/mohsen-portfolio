@@ -625,12 +625,20 @@
     @media (max-width: 900px) {
       #hero {
         grid-template-columns: 1fr;
-        padding: 100px 32px 60px;
+        padding: 120px 32px 60px;
         text-align: center;
+        gap: 50px;
       }
 
       .hero-photo-wrap {
-        display: none;
+        display: flex;
+        justify-content: center;
+        margin-top: 20px;
+      }
+
+      .hero-photo-frame {
+        width: 260px;
+        height: 340px;
       }
 
       .hero-desc {
